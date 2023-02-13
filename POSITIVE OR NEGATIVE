@@ -1,0 +1,28 @@
+//Write a Java  Program to read a number from the user and print whether it is positive or negative. (Note: Program should contains two classes)
+import java.lang.*;
+import java.util.Scanner;
+class SignValue
+{
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    SignValue(){}
+    void Check()
+    {
+        if(n>0)
+        {
+            System.out.println("Positive");
+        }
+        else
+        {
+            System.out.println("Negative");
+        }
+    }
+}
+public class Main
+{
+    public static void main(String[] args)
+    {
+        SignValue obj1= new SignValue();
+        obj1.Check();
+    }
+}
