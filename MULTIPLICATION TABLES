@@ -1,0 +1,27 @@
+import java.lang.*;
+import java.util.Scanner;
+class Table 
+{
+    Scanner sc=new Scanner(System.in);
+    Table(){}
+    void multiplicative()
+    {
+        System.out.println("enter the number you want to obtain multiplicative table for"); //enter the number ex:for 2 table enter 2
+        int a=sc.nextInt();
+        System.out.println("enter the limit upto where u want to obtain the table"); //enter the limit upto where u want to get tables like10,20,30
+        int n=sc.nextInt();
+    for(int i=1;i<=n;i++)
+    {
+        
+        System.out.println("2x"+i+"="+(a*i));
+    }
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Table obj1=new Table();
+        obj1.multiplicative();
+    }
+}
