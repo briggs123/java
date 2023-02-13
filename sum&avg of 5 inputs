@@ -1,0 +1,25 @@
+import java.lang.*;
+import java.util.Scanner;
+class Stats 
+{
+    Scanner sc=new Scanner(System.in);
+    int a=sc.nextInt();
+    int b=sc.nextInt();
+    int c=sc.nextInt();
+    int d=sc.nextInt();
+    int e=sc.nextInt();
+    Stats(){}
+    void SumAvg()
+    {
+        System.out.println("sum="+(a+b+c+d+e));
+        System.out.println("avg="+((a+b+c+d+e)/5));
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Stats obj1=new Stats();
+        obj1.SumAvg();
+    }
+}
