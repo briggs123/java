@@ -1,0 +1,23 @@
+import java.lang.*;
+import java.util.Scanner;
+class Natural
+{
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    Natural(){}
+    void print() 
+    {
+        for(int i=1;i<=n;i++)
+        {
+            System.out.print(i+" ");
+        }
+    }
+}
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Natural obj1=new Natural();
+        obj1.print();
+    }
+}
