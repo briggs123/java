@@ -1,0 +1,33 @@
+import java.lang.*;
+import java.util.Scanner;
+class Greatest 
+{
+  Scanner sc=new Scanner(System.in);
+  int a=sc.nextInt();
+  int b=sc.nextInt();
+  int c=sc.nextInt();
+  Greatest(){}
+  void check()
+  {
+      if(a>b && a>c)
+      {
+          System.out.println("Greatest="+a);
+      }
+      else if(b>a && b>c)
+      {
+          System.out.println("Greatest="+b);
+      }
+      else if(c>a && c>b)
+      {
+          System.out.println("Greatest="+c);
+      }
+  }
+}
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Greatest obj1=new Greatest();
+        obj1.check();
+    }
+}
