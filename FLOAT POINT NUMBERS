@@ -1,0 +1,31 @@
+import java.lang.*;
+import java.util.Scanner;
+class FloatPoint
+{
+    Scanner sc=new Scanner(System.in);
+    float num1=sc.nextFloat();
+    float num2=sc.nextFloat();
+    FloatPoint(){}
+    void check()
+    {
+      num1=(num1*1000)%1000;
+      num2=(num2*1000)%1000;
+      //num1=num1%1000;
+      //num2=num2%1000;
+      if(num1==num2)
+      {
+          System.out.print("they are same"+num1+"="+num2);
+      }
+      else{
+          System.out.print("they are different");
+      }
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        FloatPoint obj1=new FloatPoint();
+        obj1.check();
+    }
+}
