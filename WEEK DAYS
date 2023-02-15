@@ -1,0 +1,47 @@
+import java.lang.*;
+import java.util.Scanner;
+class Week 
+{
+   Scanner sc=new Scanner(System.in);
+   int n=sc.nextInt();
+   Week(){}
+   void days() 
+   {
+       if(n%7==0)
+       {
+           System.out.print("SUNDAY");
+       }
+       if(n%7==1)
+       {
+           System.out.print("MONDAY");
+       }
+       if(n%7==2)
+       {
+           System.out.print("TUESDAY");
+       }
+       if(n%7==3)
+       {
+           System.out.print("WEDNESDAY");
+       }
+       if(n%7==4)
+       {
+           System.out.print("THURSDAY");
+       }
+       if(n%7==5)
+       {
+           System.out.print("FRIDAY");
+       }
+       if(n%7==6)
+       {
+           System.out.print("SATURDAY");
+       }
+   }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Week obj1=new Week();
+        obj1.days();
+    }
+}
