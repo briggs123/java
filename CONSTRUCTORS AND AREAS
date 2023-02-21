@@ -1,0 +1,55 @@
+import java.lang.*;
+class Area 
+{
+    int p1;
+    int p2;
+    Area(int x)
+    {
+         p1=x;
+    }
+    Area(int x,int y)
+    {
+         p1=x;
+         p2=y;
+    }
+    Area(Area eob)
+    {
+        this.p1=eob.p1; this.p2=eob.p2;
+    }
+    void displayArea()
+    {
+        int a=p1*p1;
+        System.out.println("area of the square"+a);
+    }
+    void displayArea2()
+    {
+        int a=p1*p2;
+        System.out.println("area of the rectangle"+a);
+    }
+    void add(int x)
+    {
+        p1=p1+x;
+    }
+    void add2(int x,int y)
+    {
+        p1=p1+x;
+        p2=p2+x;
+    }
+}
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Area obj1=new Area(4);
+        Area obj2=new Area(7,8);
+        obj1.displayArea();
+        obj2.displayArea2();
+        obj1.add(2);
+        obj2.add2(2,7);
+        System.out.println("After increasing");
+        obj1.displayArea();
+        obj2.displayArea2();
+        Area obj3=new Area(obj2);
+        obj3.displayArea2();
+    }
+}
