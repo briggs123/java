@@ -1,0 +1,32 @@
+import java.lang.*;
+import java.util.Scanner;
+class Library 
+{
+    String title;
+    int code;
+    int price;
+    Library(String a,int b,int c)
+    {
+        title=a;
+        code=b;
+        price=c;
+    }
+    void display()
+    {
+        System.out.println(this.title);
+        System.out.println(this.code);
+        System.out.println(this.price);
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Library book1=new Library("serus",3456,350);
+        Library book2=new Library("sers",3457,400);
+        Library book3=new Library("erus",4567,890);
+        book1.display();
+        book2.display();
+        book3.display();
+    }
+}
