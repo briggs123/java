@@ -1,0 +1,40 @@
+import java.lang.*;
+import java.util.Scanner;
+import java.io.*;
+class Arithmetic 
+{
+    int x;
+    int y;
+    Arithmetic(int a,int b)
+    {
+        x=a;
+        y=b;
+    }
+    void add()
+    {
+        System.out.println(x+y);
+    }
+    void sub()
+    {
+        System.out.println(x-y);   
+    }
+    void multi()
+    {
+        System.out.println(x*y);
+    }
+    void div()
+    {
+        System.out.println(x/y);
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Arithmetic obj1=new Arithmetic(2,3);
+        obj1.add();
+        obj1.sub();
+        obj1.multi();
+        obj1.div();
+    }
+}
