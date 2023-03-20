@@ -1,0 +1,14 @@
+import java.lang.*;
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int l,i;
+        l=args.length;
+        for(i=0;i<l;i++)
+        {
+            System.out.println(i+")"+args[i]);
+        }
+    }
+}
