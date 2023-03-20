@@ -1,0 +1,23 @@
+import java.lang.*;
+import java.util.Scanner;
+class Methods 
+{
+    Methods(){}
+    static void add(int a,int b)
+    {
+        System.out.println("used static method to print value "+(a+b));
+    }
+    void addition(int c,int d)
+    {
+        System.out.println("used non static method to print values "+(c+d));
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Methods obj1=new Methods();
+        obj1.addition(2,3);
+        Methods.add(3,4);
+    }
+}
