@@ -1,0 +1,69 @@
+import java.lang.*;
+import java.util.Scanner;
+class Account 
+{
+    Scanner sc=new Scanner(System.in);
+    int acc_no;
+    int bal;
+    Account(int a,int b)
+    {
+        acc_no=a;
+        bal=b;
+    }
+    void startAccount(int accn)
+    {
+        if(this.acc_no==accn)
+        {
+            System.out.println("deposit the minimum amount");
+            int amount=sc.nextInt();
+            this.bal+=amount;
+        }
+        else
+        {
+            System.out.println("wrong accn_no");
+        }
+    }
+    void deposit(int accn)
+    {
+        if(this.acc_no==accn)
+        {
+        System.out.println("enter the amount you want to deposit");
+        int amount=sc.nextInt();
+        this.bal+=amount;
+        System.out.println("REMAINING BALANCE :"+this.bal);
+        }
+    }
+    void withDraw(int accn)
+    {
+        if(this.acc_no==accn)
+        {
+        System.out.println("enter the amount you want to withdraw");
+        int amount=sc.nextInt();
+        this.bal-=amount;
+        System.out.println("REMAINING BALANCE :"+this.bal);
+        }
+    }
+    void displayBalance(int accn)
+    {
+        if(this.acc_no==accn)
+        {
+            System.out.println("Account  no: "+this.acc_no);
+            System.out.println("BALANCE: "+this.bal);
+        }
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Account obj1=new Account(1199,0);
+        int i=1;
+        System.out.println("enter account number");
+        int a=sc.nextInt();
+        obj1.startAccount(a);
+        obj1.deposit(a);
+        obj1.withDraw(a);
+        obj1.displayBalance(a);
+    }
+}
