@@ -1,0 +1,47 @@
+import java.lang.*;
+import java.util.Scanner;
+class All
+{
+    All(){}
+    void compare(int x,int y)
+    {
+        if(x>y)
+        {
+            System.out.println(x+" is greater than "+y);
+        }
+        else{
+            System.out.println(y+" is greater than "+x);
+        }
+    }
+    void compare(char x,char y)
+    {
+        if(x>y)
+        {
+            System.out.println(x+" is greater than "+y);
+        }
+        else{
+            System.out.println(y+" is greater than "+x);
+        }
+    }
+    void compare(String x,String y)
+    {
+         if(x.length()>y.length())
+        {
+            System.out.println(x+" is greater than "+y);
+        }
+        else{
+            System.out.println(y+" is greater than "+x);
+        }
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        All obj1=new All();
+        obj1.compare(sc.nextInt(),sc.nextInt());
+        obj1.compare(sc.next().charAt(0),sc.next().charAt(0));
+        obj1.compare(sc.next(),sc.next());
+    }
+}
