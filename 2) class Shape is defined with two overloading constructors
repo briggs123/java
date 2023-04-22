@@ -1,0 +1,47 @@
+import java.lang.*;
+import java.util.Scanner;
+class Shape 
+{
+    int length,bredth,height;
+    Shape(int a,int b,int c)
+    {
+        length=a;
+        bredth=b;
+        height=c;
+    }
+    Shape(int a,int b)
+    {
+        length=a;
+        bredth=b;
+    }
+    public void calculate(Shape ob)
+    {
+        System.out.println("the area od 2d shape from class Shape is: "+(ob.length*ob.bredth));
+        System.out.println("the volume of the 3d shape from class Shape is :"+(length*bredth*height));
+    }
+}
+class Test extends Shape
+{
+    Test(int a,int b,int c)
+    {
+        super(a,b,c);
+    }
+    Test(int a,int b)
+    {
+        super(a,b);
+    }
+    public void calculate(Test ob)
+    {
+        super.calculate(ob);
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Test obj1=new Test(2,3,4);
+        Test obj2=new Test(5,6);
+        obj1.calculate(obj2);
+    }
+}
