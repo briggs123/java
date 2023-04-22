@@ -1,0 +1,45 @@
+import java.lang.*;
+import java.util.Scanner;
+class Shape
+{
+    Shape(){}
+    public void printShape()
+    {
+        System.out.println("this is this is shape");
+    }
+    
+}
+class Rectangle extends Shape 
+{
+    Rectangle(){};
+    public void printRect()
+    {
+        System.out.println("this is reactangle");
+    }
+}
+class Circle extends Shape 
+{
+    Circle(){};
+    public void printCircle()
+    {
+        System.out.println("this is circular shape");
+    }
+}
+class Square extends Rectangle 
+{
+    Square(){}
+    public void printSquare()
+    {
+        System.out.println("square is a reactangle");
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Square obj1=new Square();
+        obj1.printShape();
+        obj1.printRect();
+        obj1.printSquare();
+    }
+}
