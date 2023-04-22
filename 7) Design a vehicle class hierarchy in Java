@@ -1,0 +1,64 @@
+import java.lang.*;
+import java.util.Scanner;
+class Vehicle 
+{
+    String name;
+    int modelNumber;
+    String type;
+    String owner;
+    Vehicle(String a,int b,String c,String d)
+    {
+        name=a;
+        modelNumber=b;
+        type=c;
+        owner=d;
+    }
+    void getInfo()
+    {
+        System.out.println("type of the vehicle: "+type);
+        System.out.println("name of the vehicle: "+name);
+        System.out.println("name of the owner: "+owner);
+        System.out.println("model number of "+modelNumber);
+    }
+}
+class Car extends Vehicle 
+{
+    Car(String a,int b,String c,String d)
+    {
+        super(a,b,c,d);
+    }
+     void getInfo()
+    {
+        System.out.println("type of the vehicle: "+type);
+        System.out.println("name of the vehicle: "+name);
+        System.out.println("name of the owner: "+owner);
+        System.out.println("model number of "+modelNumber);
+    }
+}
+class Bike extends Vehicle 
+{
+    Bike(String a,int b,String c,String d)
+    {
+        super(a,b,c,d);
+    }
+     void getInfo()
+    {
+        System.out.println("type of the vehicle: "+type);
+        System.out.println("name of the vehicle: "+name);
+        System.out.println("name of the owner: "+owner);
+        System.out.println("model number of "+modelNumber);
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter your car details\n1)type: \n2)modelnum: \n3)type: \n4)owner: ");
+        Car obj1=new Car(sc.next(),sc.nextInt(),sc.next(),sc.next());
+        System.out.println("enter your bike details\n1)type: \n2)modelnum: \n3)type: \n4)owner: ");
+        Bike obj2=new Bike(sc.next(),sc.nextInt(),sc.next(),sc.next());
+        obj1.getInfo();
+        obj2.getInfo();
+    }
+}
