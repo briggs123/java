@@ -1,0 +1,64 @@
+import java.lang.*;
+import java.util.Scanner;
+class Member 
+{
+    String name,address;
+    int age,salary;
+    long phone;
+    Member(String a,int b,long c,String d,int e)
+    {
+        name=a;
+        age=b;
+        phone=c;
+        address=d;
+        salary=e;
+    }
+    public void printSalary()
+    {
+        System.out.println("the salary of the memeber "+name+" is "+salary);
+    }
+}
+class Employee extends Member
+{
+    String specialization,department;
+    Employee(String a,int b,long c,String d,int e,String f,String g)
+    {
+        super(a,b,c,d,e);
+        specialization=f;
+        department=g;
+    }
+    public void printSalary()
+    {
+        System.out.println("the salary of the Employee "+name+" is "+salary);
+    }
+}
+class Manager extends Member
+{
+    String specialization,department;
+    Manager(String a,int b,long c,String d,int e,String f,String g)
+    {
+        super(a,b,c,d,e);
+        specialization=f;
+        department=g;
+    }
+    public void printSalary()
+    {
+        System.out.println("the salary of the Manager "+name+" is "+salary);
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Members data\nname: \nage: \nphone number: \naddress: \nsalary: ");
+        Member obj1=new Member(sc.next(),sc.nextInt(),sc.nextLong(),sc.next(),sc.nextInt());
+        System.out.println("Enter the Employee data\nname: \nage: \nphone number: \naddress: \nsalary: \nspecialization: \ndepartment: ");
+        Employee obj2=new Employee(sc.next(),sc.nextInt(),sc.nextLong(),sc.next(),sc.nextInt(),sc.next(),sc.next());
+        System.out.println("Enter the Manager data\nname: \nage: \nphone number: \naddress: \nsalary: \nspecialization: \ndepartment: ");
+        Manager obj3=new Manager(sc.next(),sc.nextInt(),sc.nextLong(),sc.next(),sc.nextInt(),sc.next(),sc.next());
+        obj1.printSalary();
+        obj2.printSalary();
+        obj3.printSalary();
+    }
+}
