@@ -1,0 +1,39 @@
+import java.lang.*;
+import java.util.Scanner;
+interface A 
+{
+    Scanner sc=new Scanner(System.in);
+    public int a=sc.nextInt();
+    public void sum();
+}
+interface B 
+{
+    Scanner sc=new Scanner(System.in);
+    public int b=sc.nextInt();
+    public void multiply();
+}
+class MultipleInheritance implements A,B
+{
+    int sum,product;
+    MultipleInheritance(){};
+    public void sum()
+    {
+        sum=a+b;
+        System.out.println("the sum of the numbers is: "+sum);
+    }
+    public void multiply()
+    {
+        product=a*b;
+        System.out.println("product of the numbers is: "+product);
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        MultipleInheritance obj1=new MultipleInheritance();
+        obj1.sum();
+        obj1.multiply();
+    }
+}
