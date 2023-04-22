@@ -1,0 +1,28 @@
+import java.lang.*;
+import java.util.Scanner;
+class Point 
+{
+    double a,b;
+    Point(int x,int y)
+    {
+        a=x;
+        b=y;
+    }
+    double distance(Point ob1,Point ob2)
+    {
+        double dist=Math.sqrt(Math.pow((ob1.a-ob2.a),2)-Math.pow((ob1.b-ob2.b),2));
+        System.out.println(dist);
+        return dist;
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Point obj1=new Point(sc.nextInt(),sc.nextInt());
+        Point obj2=new Point(sc.nextInt(),sc.nextInt());
+        double d=obj1.distance(obj1,obj2);
+        System.out.println("distance between two points "+d);
+    }
+}
