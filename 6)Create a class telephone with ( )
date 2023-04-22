@@ -1,0 +1,29 @@
+
+import java.lang.*;
+import java.util.Scanner;
+interface Telephone 
+{
+    public void lift();
+    public void disconnected();
+}
+class SmartTelephone implements Telephone 
+{
+    SmartTelephone(){}
+    public void lift()
+    {
+        System.out.println("telephone is connected to talk");
+    }
+    public void disconnected()
+    {
+        System.out.println("telephone is disconnected");
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        SmartTelephone obj1=new SmartTelephone();
+        obj1.lift();
+        obj1.disconnected();
+    }
+}
