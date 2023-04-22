@@ -1,4 +1,3 @@
-
 import java.lang.*;
 import java.util.Scanner;
 interface Telephone 
@@ -22,7 +21,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        SmartTelephone obj1=new SmartTelephone();
+        Telephone obj1=new SmartTelephone();
         obj1.lift();
         obj1.disconnected();
     }
