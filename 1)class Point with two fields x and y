@@ -10,7 +10,7 @@ class Point
     }
     double distance(Point ob1,Point ob2)
     {
-        double dist=Math.sqrt(Math.pow((ob1.a-ob2.a),2)-Math.pow((ob1.b-ob2.b),2));
+        double dist=Math.sqrt(Math.pow((ob1.a-ob2.a),2)+Math.pow((ob1.b-ob2.b),2));
         System.out.println(dist);
         return dist;
     }
