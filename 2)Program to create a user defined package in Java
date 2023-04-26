@@ -1,0 +1,28 @@
+PACKAGE FOR THE CODE 
+package koushik;
+public class Pack1 
+{
+  int a,b;
+  public Pack1(int x,int y) 
+  {
+     a=x;
+     y=b;
+   }
+  public void sum()
+  {
+     System.out.println(a+b);
+  }
+}
+MAIN COODE
+import koushik.*;
+import java.lang.*;
+import java.util.Scanner;
+public class User 
+{
+  public static void main(String[] args) 
+ {
+      Scanner sc=new Scanner(System.in);
+      Pack1 obj1=new Pack1(2,3);
+      obj1.sum();
+ }
+}     
