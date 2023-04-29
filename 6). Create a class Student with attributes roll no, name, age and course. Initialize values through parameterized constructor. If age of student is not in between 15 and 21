@@ -1,0 +1,73 @@
+import java.lang.*;
+import java.util.Scanner;
+class AgeNotWithinRangeException extends Exception 
+{
+    AgeNotWithinRangeException(String msg)
+    {
+        super(msg);
+    }
+}
+class NameNotValidException extends Exception 
+{
+   NameNotValidException(String msg)
+    {
+        super(msg);
+    }
+}
+class Students 
+{ 
+     int roll, age;
+    String course, name;
+     Students(int a, String b, int c, String d) throws AgeNotWithinRangeException, NameNotValidException 
+     {
+        roll = a;
+        name = b;
+        age = c;
+        course = d;
+        if (age < 15 || age > 21) {
+            throw new AgeNotWithinRangeException("Age should be between 15 and 21");
+        }
+        if (!validName(name)) {
+            throw new NameNotValidException("Name contains invalid characters");
+        }
+    }
+    public boolean validName(String name)
+    {
+        return name.matches("[a-zA-Z]+");
+    }
+    void display()
+    {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Roll No: " + roll);
+        System.out.println("Course: " + course);
+    }
+}
+public class Main 
+{
+    public static void main(String[] args) throws AgeNotWithinRangeException, NameNotValidException
+    {
+        Scanner sc=new Scanner(System.in);
+        try 
+        {
+             System.out.print("Enter roll no: ");
+            int roll = sc.nextInt();
+            System.out.print("Enter name: ");
+            String name = sc.next();
+            System.out.print("Enter age: ");
+            int age = sc.nextInt();
+            System.out.print("Enter course: ");
+            String course = sc.next();
+            Students obj1=new Students(roll,name,age,course);
+            obj1.display();
+        }
+        catch(AgeNotWithinRangeException e)
+        {
+            System.out.println("Exception: "+e);
+        }
+        catch(NameNotValidException s)
+        {
+            System.out.println("exception: "+s);
+        }
+    }
+}
