@@ -1,0 +1,23 @@
+import java.lang.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        try 
+        {
+            int a=100/0;
+        }
+        catch(ArithmeticException ae)
+        {
+            System.out.println("Exception caused "+ae.getMessage());
+        }
+        catch(Exception e)
+        {
+            System.out.println("Exception in executing program");
+        }
+        finally
+        {
+            System.out.println("final block has been executed");
+        }
+    }
+}
