@@ -1,0 +1,49 @@
+import java.lang.*;
+import java.util.Scanner;
+class Account 
+{
+    long accno;
+    String name;
+    int bal;
+    Account(long a,String b,int c)
+    {
+        accno=a;
+        name=b;
+        bal=c;
+    }
+    void deposit(int amount)
+    {
+        this.bal+=amount;
+    }
+    void withdraw(int amount) throws Exception
+    {
+        if(this.bal<1000)
+        {
+            throw new Exception("the amount is less than 1000");
+        }
+        else{
+            this.bal-=amount;
+        }
+    }
+}
+public class Main 
+{
+    public static void main(String[] args) throws Exception
+    {
+        Scanner sc=new Scanner(System.in);
+        try 
+        {
+          System.out.println("enter your account number");
+          long acc=sc.nextLong();
+          System.out.println("enter the name of acc holder");
+          String name=sc.next();
+          Account obj1=new Account(acc,name,1000);
+          obj1.withdraw(100);
+          obj1.withdraw(100);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Exception occured: "+e.getMessage());
+        }
+    }
+}
