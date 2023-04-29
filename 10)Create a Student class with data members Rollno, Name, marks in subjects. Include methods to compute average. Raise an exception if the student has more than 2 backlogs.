@@ -1,0 +1,67 @@
+import java.lang.*;
+import java.util.Scanner;
+class BacklogsException extends Exception 
+{
+    public BacklogsException(String msg)
+    {
+        super(msg);
+    }
+}
+class Student 
+{
+    int roll;
+    String name;
+    int backlogs=0;
+    double average=40;
+    int marks[]=new int[5];
+    Student(String a,int b,int c[])
+    {
+        roll=b;
+        name=a;
+        marks=c;
+    }
+    public double Average() throws BacklogsException
+    {
+        int sum=0;
+        for(int i=0;i<marks.length;i++)
+        {
+            sum+=marks[i];
+        }
+        for(int i=0;i<marks.length;i++)
+        {
+            if(marks[i]<average)
+            {
+                backlogs++;
+            }
+            if(backlogs>2)
+            {
+                throw new BacklogsException("backlogs exceed 2");
+            }
+        }
+        return (double) sum/marks.length;
+    }
+}
+public class Main 
+{
+    public static void main(String[] args) throws BacklogsException
+    {
+        Scanner sc=new Scanner(System.in);
+        int mar[]=new int[5];
+        System.out.println("enter marks of the each subject");
+        for(int i=0;i<5;i++)
+        {
+            System.out.println((i+1)+"subject marks: ");
+            mar[i]=sc.nextInt();
+        }
+        Student obj1=new Student("ram",1,mar);
+        try 
+        {
+            double s_average=obj1.Average();
+            System.out.println("student average is "+s_average);
+        }
+        catch(BacklogsException be)
+        {
+            System.out.println("Exception: "+be);
+        }
+    }
+}
