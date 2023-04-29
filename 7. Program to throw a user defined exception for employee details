@@ -1,0 +1,67 @@
+import java.lang.*;
+import java.util.Scanner;
+class AgeException extends Exception 
+{
+    public AgeException(String msg)
+    {
+        super(msg);
+    }
+}
+class NameException extends Exception 
+{
+    public NameException(String msg)
+    {
+        super(msg);
+    }
+}
+class Employee 
+{
+    String name;
+    int age;
+    public Employee(String a,int b) throws AgeException,NameException
+    {
+        name=a;
+        age=b;
+        if(age>50)
+        {
+            throw new AgeException("employee age is above 50");
+        }
+        if(validName(name))
+        {
+            throw new NameException("the name consists of numbers");
+        }
+    }
+    void display()
+    {
+        System.out.println("name: "+name);
+        System.out.println("age: "+age);
+    }
+    public static boolean validName(String name)
+    {
+        return name.matches(".*\\d.*");
+    }
+}
+public class Main 
+{
+    public static void main(String[] args) throws AgeException,NameException
+    {
+        Scanner sc=new Scanner(System.in);
+        try 
+        {
+            System.out.println("enter employee name");
+            String name=sc.next();
+            System.out.println("enter employee age");
+            int age=sc.nextInt();
+            Employee obj1=new Employee(name,age);
+            obj1.display();
+        }
+        catch(AgeException ae)
+        {
+            System.out.println("Exception "+ae);
+        }
+        catch(NameException ne)
+        {
+            System.out.println("Exception "+ne);
+        }
+    }
+}
