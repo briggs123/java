@@ -1,0 +1,57 @@
+//package 1 code
+package Quad1;
+import java.util.Scanner;
+import java.lang.*;
+interface Quad1 
+{
+    public void calculate();
+}
+//package 2 code
+package Quad2;
+import Quad1.*;
+import java.lang.*;
+import java.util.Scanner;
+class Quad2 implements Quad1 
+{
+    int a,b,c;
+    Quad2(int x,int y,int z)
+    {
+        a=x;
+        b=y;
+        c=z;
+    }
+    public void calculate()
+    {
+         double det=(b*b)-(4*a*c);
+         if(det==0)
+         {
+             double root1=-b/(2*a);
+             System.out.println("there is only one root for this equation "+root1);
+         }
+         if(det<0)
+         {
+             System.out.println("roots of this equation is imaginary");
+         }
+         if(det>0)
+         {
+             double root1=(-b+Math.sqrt(det))/2*a;
+             double root2=(-b-Math.sqrt(det))/2*a;
+             System.out.println("1st root of the quadratic equation"+root1);
+             System.out.println("2nd root of the quadratic equatioon "+root2);
+         }
+    }
+}
+//main code
+import java.lang.*;
+import java.utl.Scanner;
+import Quad2.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter coefficent of a,b and c");
+        Quad1 obj1=new Quad2(sc.nextInt(),sc.nextInt(),sc.nextInt());
+        obj1.calculate();
+    }
+}
